@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:text="Bienvenue sur ArcheoDrone, \n connectez vous en tant qu'administrateur \n ou sélectionner VIEWER"/>
+        android:text="Bienvenue sur ArcheoFly, \n connectez vous en tant qu'administrateur \n ou sélectionner VIEWER"/>
 
     <EditText
         android:id="@+id/activity_main_log_input"
@@ -28,7 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="Please type your login password"/>
+        android:hint="Please type your login password"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/activity_main_login_btn"
@@ -48,6 +50,11 @@
         android:layout_gravity="center_horizontal"
         android:text="VIEWER"/>
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cathedrale" />
 
 
 </LinearLayout>

@@ -1,5 +1,12 @@
+/**
+ * @author MODESTE Sullyvan
+ */
 package com.example.archeodrone;
 
+/**
+ * Les différents import nécessaires pour les éléments de l'application
+ *
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +21,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Attributs des éléments de l'interface
+     *      mLoginInput - Login de l'utilisateur
+     *      mPasswordInput - Mot de passe de l'utilisateur
+     *      mLoginButton - Boutton pour l'interface ADMIN
+     *      mViewerButton - Boutton pour utilisateur
+     */
     public final static int REQ_IMG_SECONDACTIVITY = 1;
     private TextView mGreetingText;
     private EditText mLoginInput;
@@ -21,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     private Button mLoginButton;
     private Button mViewerButton;
 
+    /**
+     *
+     * @param savedInstanceState
+     * onCreate - Constructeur permettant de créer l'activité
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }); //Vérification du champs text
 
+
         mViewerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +77,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     *
+     * @param requestCode
+     *              Code envoyer vers une autre activité
+     * @param resultCode
+     *              Permet de vérifier que la demande c'est correctement effectué
+     * @param data
+     *              Données reçu
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == REQ_IMG_SECONDACTIVITY) {
@@ -67,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     *
+     * @param bundle
+     *        Package de données
+     */
     public void traitement(Bundle bundle){
         String retour = bundle.getString("img");
         Toast.makeText(getApplication(), "Retour : " + retour, Toast.LENGTH_LONG).show();

@@ -1,5 +1,12 @@
+/**
+ * @author MODESTE Sullyvan
+ */
 package com.example.archeodrone;
 
+/**
+ * Les différents import nécessaires pour les éléments de l'application
+ *
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,13 +18,22 @@ import android.view.WindowManager;
 import android.widget.VideoView;
 
 public class ThirdActivity extends AppCompatActivity {
-
+    /**
+     * Attributs des éléments de l'interface
+     *      VideoView - Permet l'affichage de vidéo
+     */
     private VideoView videoView;
+
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // Set window fullscreen and remove title bar, and force landscape orientation
-
+        /**
+         * Set window fullscreen and remove title bar, and force landscape orientation
+         */
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -31,12 +47,18 @@ public class ThirdActivity extends AppCompatActivity {
         videoView.setVideoURI( uri );
     }
 
+    /**
+     * Méthode permettant de lire la vidéo (Non nécessaire pour Livestream)
+     */
     @Override
     protected  void onResume() {
         super.onResume();
         videoView.start();
     }
 
+    /**
+     * Méthode permettant de mettre en pause la vidéo (Non nécessaire pour Livestream)
+     */
     @Override
     protected void onPause() {
         super.onPause();
